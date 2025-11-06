@@ -1,0 +1,123 @@
+/* ======= Menú estilo Restaurante de Hamburguesas ======= */
+
+:root {
+  --bg-color: #2b1b12;         /* marrón oscuro, estilo parrilla */
+  --accent: #ff7a00;           /* naranja hamburguesa */
+  --text-light: #fff4e3;       /* crema */
+  --hover: #ff9a3d;
+  --radius: 14px;
+  --shadow: rgba(0, 0, 0, 0.25);
+  --font: "Poppins", sans-serif;
+}
+
+.menu {
+  background-color: var(--bg-color);
+  width: 250px;
+  min-height: 100vh;
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 0 15px var(--shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* ======= HEADER DEL MENÚ ======= */
+.menu-header {
+  text-align: center;
+  padding: 3rem 1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-header h2 {
+  font-family: var(--font);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+/* ======= LISTA DEL MENÚ ======= */
+.menu-list {
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.menu-list li {
+  margin: 0.5rem 0;
+}
+
+.menu-list a {
+  display: block;
+  padding: 0.9rem 1.5rem;
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.menu-list a:hover {
+  background: rgba(255, 122, 0, 0.15);
+  color: var(--hover);
+  border-left: 4px solid var(--accent);
+  transform: translateX(5px);
+}
+
+/* ======= LINK ACTIVO ======= */
+.menu-list a.active {
+  background: rgba(255, 122, 0, 0.25);
+  color: var(--accent);
+  border-left: 4px solid var(--accent);
+  font-weight: 700;
+}
+
+/* ======= EFECTO AL PASAR EL CURSOR ======= */
+.menu-list a::before {
+  content: "🍔";
+  margin-right: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-list a:hover::before {
+  opacity: 1;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 800px) {
+  .menu {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    position: static;
+  }
+
+  .menu-header {
+    display: none;
+  }
+
+  .menu-list {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .menu-list a {
+    padding: 0.6rem 1rem;
+    border-left: none;
+    border-radius: var(--radius);
+  }
+
+  .menu-list a.active {
+    background: var(--accent);
+    color: var(--text-light);
+  }
+}

@@ -1,0 +1,57 @@
+<div class="product-form-container">
+  <h2>REGISTRAR PRODUCTO</h2>
+
+  <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+    <div class="form-group">
+      <label for="name">Nombre del Producto</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="product.name"
+        required
+        placeholder="Hamburguesa AF"
+      />
+    </div>
+
+    <div class="form-group">
+        <label for="image">Imagen(URL)</label>
+        <input
+        type="text"
+        id="image"
+        name="image"
+        [(ngModel)]="product.image"
+        placeholder="https://example.com/hamburguesa.jpg"
+        />
+    </div>
+
+    <div class="form-group">
+      <label for="description"></label>
+      <textarea
+        name="description"
+        id="description"
+        [(ngModel)]="product.description"
+        rows="3"
+        placeholder="Describe el producto"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="price">Precio</label>
+        <input 
+        type="number"
+        id="price"
+        name="price"
+        [(ngModel)]="product.image"
+        required
+        placeholder="EJ: 18,000"
+        />
+
+
+        <button type="submit" [disabled]="productForm.invalid">GUARDAR PRODUCTO</button>
+
+
+
+    </div>
+  </form>
+</div>

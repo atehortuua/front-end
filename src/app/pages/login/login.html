@@ -1,1 +1,17 @@
-<p>login works!</p>
+<section>
+    <h1>INICIAR SESION</h1>
+    <form (ngSubmit)="login()">
+
+        <div class="from">
+      <label for="name">Correo:</label>
+      <input [(ngModel)]="user.email" type="text" name="name" id="name"placeholder="correo">
+    </div>
+      <div class="from">
+      <label for="name">Contraseña:</label>
+      <input [(ngModel)]="user.password" type="password" name="name" id="password"placeholder="Contraseña">
+    </div>
+
+        <button type ="submit">Entrar</button>
+   
+    </form>
+</section>

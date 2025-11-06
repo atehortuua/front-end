@@ -1,0 +1,34 @@
+<div class="product-form-container">
+    <h2>REGISTRAR RESTAURANTE</h2>
+    <form (ngSubmit)="onSubmit()">
+        <label>Nombre del Restaurante</label>
+        <input 
+        type="text"
+        [(ngModel)]="restaurant.name"
+        name="name"
+        required
+        />
+
+        <label>Direccion</label>
+        <input 
+        type="text"
+        [(ngModel)]="restaurant.address"
+        name="address"
+        required
+        />
+
+    
+
+        <label>Descripcion</label>
+        <textarea 
+        [(ngModel)]="restaurant.description"
+        name="description"
+        > </textarea>
+
+        <button type="submit"> Guardar Restaurante</button>
+
+        
+
+    </form>
+
+</div>
