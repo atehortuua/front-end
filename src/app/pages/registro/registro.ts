@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Auth } from '../../services/auth';
 
 @Component({
   selector: 'app-registro',
@@ -8,6 +9,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './registro.css',
 })
 export class Registro {
+
+  private auth = inject (Auth)
   user={
     name : '',
     lastName: '',
@@ -19,7 +22,13 @@ export class Registro {
   }
 
   register(){
-    console.log(' usurio creado')
-    console.log(this.user)
+    this.auth.register(this.user).subscribe({
+      next: (res : any )=>{
+        console.log(res)
+      }, 
+      error : (err)=> {
+        console.log(err)
+      },
+    })
   }
 }
