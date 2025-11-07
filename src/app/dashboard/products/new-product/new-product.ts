@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { Product } from '../../../services/product';
 
 
 @Component({
@@ -10,7 +11,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './new-product.css',
 })
 export class NewProduct {
+  private productService = inject(Product)
   product= {
+    nameRestaurant: '',
     name :'',
     description:'',
     image : '',
@@ -18,6 +21,14 @@ export class NewProduct {
   };
   
   onSubmit(){
-    console.log('producto creado', this.product);
+    this.productService.createProduct(this.product).subscribe({
+      next: (res : any) =>{
+        console.log(res)
+
+      },
+      error:(err)=>{
+        console.log(err)
+      }
+    })
   }
 }

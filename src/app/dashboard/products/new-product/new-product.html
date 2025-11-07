@@ -1,7 +1,22 @@
 <div class="product-form-container">
   <h2>REGISTRAR PRODUCTO</h2>
 
+  
+
   <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+
+
+      <div class="form-group">
+      <label for="name">Nombre del Restaurante</label>
+      <input
+        type="text"
+        name="nameRestaurant"
+        [(ngModel)]="product.nameRestaurant"
+        required
+        placeholder="Nombre del Restaurante"
+      />
+    </div>
+
     <div class="form-group">
       <label for="name">Nombre del Producto</label>
       <input
@@ -32,7 +47,7 @@
         id="description"
         [(ngModel)]="product.description"
         rows="3"
-        placeholder="Describe el producto"
+        placeholder="Describe del producto"
       ></textarea>
     </div>
 
@@ -42,7 +57,7 @@
         type="number"
         id="price"
         name="price"
-        [(ngModel)]="product.image"
+        [(ngModel)]="product.price"
         required
         placeholder="EJ: 18,000"
         />
