@@ -1,1 +1,16 @@
-<p>home works!</p>
+<div class="cards-container">
+  @for (item of products; track $index) {
+    <div class="card">
+      <img [src]="item.image" alt="{{item.name}}" class="card-img">
+      <div class="card-body">
+        <h3 class="card-Restaurant">{{item.nameRestaurant}}</h3>
+        <h2 class="card-title">{{item.name}}</h2>
+        <p class="card-description">{{item.description}}</p>
+        <p class="card-price">{{item.price}}</p>
+
+        
+        <button class="card-btn">Votar</button>
+      </div>
+    </div>
+  }
+</div>

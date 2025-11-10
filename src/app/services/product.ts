@@ -11,5 +11,7 @@ export class Product {
   createProduct(data: any){
     return this.http.post(this.apiUrl+ '/api/products/createProduct' , data );
   }
-  
+  getProducts(){
+    return this.http.get(this.apiUrl+  "/api/products/product");
+  }
 }
