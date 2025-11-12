@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Auth } from '../../services/auth';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +9,15 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.css',
 })
 export class Header {
+  private auth = inject(Auth);
+  
 
+  get  logeado(){
+    return this.auth.isLoggedIn();
+  }
+
+
+  logout () {
+    this.auth.logout();
+  }
 }

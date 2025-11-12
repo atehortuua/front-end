@@ -18,6 +18,22 @@ export class Auth {
     return this.http.post(this.apiUrl + '/api/users/login' , data);
   }
 
+  saveToken(token: string){
+    localStorage.setItem('token', token)
+  };
+
+  getToken(){
+    return localStorage.getItem('token')
+  };
+
+  logout(){
+    localStorage.removeItem('token')
+  }
+
+  isLoggedIn(){
+    return !!localStorage.getItem('token')
+  }
+
 
 
 }

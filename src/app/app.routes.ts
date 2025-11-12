@@ -9,6 +9,7 @@ import { UpdateProduct } from './dashboard/products/update-product/update-produc
 import { InfoRestaurants } from './dashboard/restaurants/info-restaurants/info-restaurants';
 import { UpdateRestaurants } from './dashboard/restaurants/update-restaurants/update-restaurants';
 import { Admin } from './dashboard/admin/admin';
+import { authGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
     {path: '', component : Home},
@@ -17,7 +18,7 @@ export const routes: Routes = [
     {path: 'registro', component :  Registro},
 
     //rutas Guard
-    {path: 'dashboard/admin', component :  Admin},
+    {path: 'dashboard/admin', component :  Admin , canActivate: [authGuard]},
     {path: 'dashboard/products', component :  InfoProduct},
     {path: 'dashboard/newProducts', component :  NewProduct},
     {path: 'dashboard/updateProducts', component :  UpdateProduct},
