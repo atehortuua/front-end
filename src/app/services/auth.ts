@@ -18,8 +18,9 @@ export class Auth {
     return this.http.post(this.apiUrl + '/api/users/login' , data);
   }
 
-  saveToken(token: string){
+  saveToken(token: string, role : string){
     localStorage.setItem('token', token)
+    localStorage.setItem('role', role)
   };
 
   getToken(){
@@ -28,11 +29,20 @@ export class Auth {
 
   logout(){
     localStorage.removeItem('token')
+    localStorage.removeItem('role')
+
   }
 
   isLoggedIn(){
     return !!localStorage.getItem('token')
   }
+  isAdmin(){
+    const role =localStorage.getItem('role')
+    return role === 'admin' || role === 'owner'
+  }
+
+
+
 
 
 

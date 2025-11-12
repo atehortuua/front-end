@@ -15,7 +15,9 @@ export class Header {
   get  logeado(){
     return this.auth.isLoggedIn();
   }
-
+  get admin (){
+    return this.auth.isAdmin();
+  }
 
   logout () {
     this.auth.logout();

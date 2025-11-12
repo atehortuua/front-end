@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Auth } from '../../services/auth';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -23,8 +24,20 @@ export class Login {
     this.auth.login(this.user).subscribe({
     
       next : (res : any)=>{
-      this.auth.saveToken(res.token)
-      this.router.navigate(['/'])
+      this.auth.saveToken(res.token, res.role)
+      Swal.fire({
+      title: "Drag me!",
+      icon: "success",
+      draggable: true
+});
+
+      if (res.role === 'cliente'){
+        this.router.navigate(['/']);
+      }else {
+        this.router.navigate(['/dashboard/admin']);
+
+      }
+
         console.log(res);
       },
       error : (err)=> {
