@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Auth } from '../../services/auth';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-header',
@@ -10,16 +11,20 @@ import { Auth } from '../../services/auth';
 })
 export class Header {
   private auth = inject(Auth);
+  private router = inject(Router)
   
 
   get  logeado(){
     return this.auth.isLoggedIn();
   }
-  get admin (){
+  get admin(){
     return this.auth.isAdmin();
   }
 
   logout () {
     this.auth.logout();
+    Swal.fire("Sesion cerrada");
+    this.router.navigate([''])
+
   }
 }

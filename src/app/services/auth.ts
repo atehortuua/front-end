@@ -37,8 +37,10 @@ export class Auth {
     return !!localStorage.getItem('token')
   }
   isAdmin(){
-    const role =localStorage.getItem('role')
+    const role = localStorage.getItem('role')
     return role === 'admin' || role === 'owner'
+    // return role === 'cliente'
+
   }
 
 

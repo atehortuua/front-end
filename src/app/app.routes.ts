@@ -3,13 +3,11 @@ import { Home } from './pages/home/home';
 import { Contacto } from './pages/contacto/contacto';
 import { Login } from './pages/login/login';
 import { Registro } from './pages/registro/registro';
-import { InfoProduct } from './dashboard/products/info-product/info-product';
 import { NewProduct } from './dashboard/products/new-product/new-product';
-import { UpdateProduct } from './dashboard/products/update-product/update-product';
-import { InfoRestaurants } from './dashboard/restaurants/info-restaurants/info-restaurants';
-import { UpdateRestaurants } from './dashboard/restaurants/update-restaurants/update-restaurants';
 import { Admin } from './dashboard/admin/admin';
 import { authGuard } from './guards/auth-guard';
+import { VotesProduct } from './dashboard/votes-product/votes-product';
+
 
 export const routes: Routes = [
     {path: '', component : Home},
@@ -19,11 +17,11 @@ export const routes: Routes = [
 
     //rutas Guard
     {path: 'dashboard/admin', component :  Admin , canActivate: [authGuard]},
-    {path: 'dashboard/products', component :  InfoProduct},
+
     {path: 'dashboard/newProducts', component :  NewProduct},
-    {path: 'dashboard/updateProducts', component :  UpdateProduct},
-    {path: 'dashboard/restaurants', component :  InfoRestaurants},
-    {path: 'dashboard/updateRestaurants', component :  UpdateRestaurants},
+    {path: 'dashboard/votesProducts', component :  VotesProduct,},
+
+    
 
     {path: '**', redirectTo: ''} //redireccionar al inicio
 

@@ -24,6 +24,7 @@ export class Login {
     this.auth.login(this.user).subscribe({
     
       next : (res : any)=>{
+        console.log(res)
       this.auth.saveToken(res.token, res.role)
       Swal.fire({
       title: "Drag me!",
@@ -38,7 +39,7 @@ export class Login {
 
       }
 
-        console.log(res);
+      
       },
       error : (err)=> {
         console.log(err);

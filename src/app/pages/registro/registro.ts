@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Auth } from '../../services/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -11,6 +12,7 @@ import { Auth } from '../../services/auth';
 export class Registro {
 
   private auth = inject (Auth)
+  private router = inject(Router)
   user={
     name : '',
     lastName: '',
@@ -25,10 +27,14 @@ export class Registro {
     this.auth.register(this.user).subscribe({
       next: (res : any )=>{
         console.log(res)
+        this.router.navigate(['/login'])
       }, 
       error : (err)=> {
         console.log(err)
       },
-    })
+
+
+
+    });
   }
 }
