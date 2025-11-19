@@ -27,6 +27,7 @@ export class Product {
     return this.http.get(this.apiUrl+  "/api/products/product");
   }
 
-
- 
+  deleteProductById(id: string){
+    return this.http.delete(this.apiUrl+ '/api/products/deleteProduct/' + id , {headers: this.getHeaders () });
+  }
 }

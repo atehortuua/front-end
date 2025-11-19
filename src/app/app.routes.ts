@@ -7,6 +7,11 @@ import { NewProduct } from './dashboard/products/new-product/new-product';
 import { Admin } from './dashboard/admin/admin';
 import { authGuard } from './guards/auth-guard';
 import { VotesProduct } from './dashboard/votes-product/votes-product';
+import { AllProducts } from './dashboard/products/all-products/all-products';
+import { MyUser } from './dashboard/users/my-user/my-user';
+import { UpdateUser } from './dashboard/users/update-user/update-user';
+import { AllUsers } from './dashboard/users/all-users/all-users';
+
 
 
 export const routes: Routes = [
@@ -16,10 +21,21 @@ export const routes: Routes = [
     {path: 'registro', component :  Registro},
 
     //rutas Guard
-    {path: 'dashboard/admin', component :  Admin , canActivate: [authGuard]},
+    {
+        path: 'dashboard', component :  Admin , canActivate: [authGuard],
+        children : [
+            {path: 'newProducts', component :  NewProduct},
+            {path: 'votesProducts', component :  VotesProduct},
+            {path: 'updateProduct/:id', component :  NewProduct},
+            {path: 'products', component: AllProducts},
 
-    {path: 'dashboard/newProducts', component :  NewProduct},
-    {path: 'dashboard/votesProducts', component :  VotesProduct,},
+            {path: 'myUser', component: MyUser},
+            {path: 'updateUser/:id', component : UpdateUser},
+            {path: 'allUsers', component : AllUsers}       
+                    ]
+    },
+
+    
 
     
 

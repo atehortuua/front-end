@@ -35,7 +35,7 @@ export class Login {
       if (res.role === 'cliente'){
         this.router.navigate(['/']);
       }else {
-        this.router.navigate(['/dashboard/admin']);
+        this.router.navigate(['/dashboard']);
 
       }
 
