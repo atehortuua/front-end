@@ -5,10 +5,10 @@ import { inject, Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class Product {
-  private http = inject(HttpClient)
-  private apiUrl : string ='http://localhost:3000'
+  private http = inject(HttpClient);
+  private apiUrl: string = 'http://localhost:3000';
 
-   getToken(){
+  getToken() {
     return localStorage.getItem('token');
   }
 
@@ -16,18 +16,31 @@ export class Product {
     const token = this.getToken();
     return new HttpHeaders({
       'Content-Type': 'application/json',
-      ...(token && { 'Authorization': `Bearer ${token}` })
+      ...(token && { Authorization: `Bearer ${token}` }),
     });
   }
 
-  createProduct(data: any){
-    return this.http.post(this.apiUrl+ '/api/products/createProduct' , data , {headers: this.getHeaders () });
+  createProduct(data: any) {
+    return this.http.post(this.apiUrl + '/api/products/createProduct', data, {
+      headers: this.getHeaders(),
+    });
   }
-  getProducts(){
-    return this.http.get(this.apiUrl+  "/api/products/product");
+  getProducts() {
+    return this.http.get(this.apiUrl + '/api/products/product');
   }
 
-  deleteProductById(id: string){
-    return this.http.delete(this.apiUrl+ '/api/products/deleteProduct/' + id , {headers: this.getHeaders () });
+  getProductsByUser() {
+    return this.http.get(this.apiUrl + '/api/products/productByUser', {headers: this.getHeaders()});
+  }
+
+
+   getProductsById(id : string) {
+    return this.http.get(this.apiUrl + '/api/products/product/' +id);
+  }
+
+  deleteProductById(id: string) {
+    return this.http.delete(this.apiUrl + '/api/products/deleteProduct/' + id, {
+      headers: this.getHeaders(),
+    });
   }
 }
