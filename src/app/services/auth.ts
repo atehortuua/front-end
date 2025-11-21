@@ -44,7 +44,9 @@ export class Auth {
   }
 
 
-
+getRole(){
+  return localStorage.getItem('role')
+}
 
 
 

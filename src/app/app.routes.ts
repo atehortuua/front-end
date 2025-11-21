@@ -11,6 +11,8 @@ import { AllProducts } from './dashboard/products/all-products/all-products';
 import { MyUser } from './dashboard/users/my-user/my-user';
 import { UpdateUser } from './dashboard/users/update-user/update-user';
 import { AllUsers } from './dashboard/users/all-users/all-users';
+import { UpdateProduct } from './dashboard/products/update-product/update-product';
+import { InfoProduct } from './dashboard/products/info-product/info-product';
 
 
 
@@ -25,13 +27,19 @@ export const routes: Routes = [
         path: 'dashboard', component :  Admin , canActivate: [authGuard],
         children : [
             {path: 'newProducts', component :  NewProduct},
-            {path: 'votesProducts', component :  VotesProduct},
-            {path: 'updateProduct/:id', component :  NewProduct},
+            {path: 'updateProduct/:id', component :  UpdateProduct},
             {path: 'products', component: AllProducts},
+            {path: 'MyProduct', component: InfoProduct},
+
+
 
             {path: 'myUser', component: MyUser},
             {path: 'updateUser/:id', component : UpdateUser},
-            {path: 'allUsers', component : AllUsers}       
+            {path: 'allUsers', component : AllUsers}  ,
+            
+            
+            {path: 'votesProducts', component :  VotesProduct}
+
                     ]
     },
 

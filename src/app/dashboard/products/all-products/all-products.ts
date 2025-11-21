@@ -8,37 +8,34 @@ import { Product } from '../../../services/product';
   styleUrl: './all-products.css',
 })
 export class AllProducts {
-  products: any
-  private productsService = inject(Product)
+  products: any;
+  private productsService = inject(Product);
 
   ngOnInit() {
-    this.getProducts() ; 
+    this.getProducts();
   }
   getProducts() {
     this.productsService.getProducts().subscribe({
-      next:(res : any) => {
-        console.log(res)
-        this.products = res.products
+      next: (res: any) => {
+        console.log(res);
+        this.products = res.products;
       },
-      error:(error) => {
-        console.log(error)  
-    }
+      error: (error) => {
+        console.log(error);
+      },
     });
   }
 
-
-  deleteProduct (id : string) {
-
-  }
-    delete (id : string) {
+  deleteProduct(id: string) {}
+  delete(id: string) {
     this.productsService.deleteProductById(id).subscribe({
-      next: (res: any)=>{
-        console.log(res)
+      next: (res: any) => {
+        console.log(res);
         this.getProducts();
       },
-      error: (err)=>{
-        console.log(err)
-      }
+      error: (err) => {
+        console.log(err);
+      },
     });
-  } 
+  }
 }

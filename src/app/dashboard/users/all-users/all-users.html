@@ -1,1 +1,14 @@
-<p>all-users works!</p>
+<section>
+    @for(u of allUsers ; track u._id){ 
+
+    <div class="card">
+        <h2>{{ u.name }}</h2>
+        <button (click)="deleteUser(u._id)">Eliminar Usuario</button>
+
+        <h2> {{u.role}} </h2>
+        
+    </div>
+     }
+
+
+</section>
