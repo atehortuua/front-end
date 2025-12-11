@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Product } from '../../../services/product';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-all-products',
@@ -10,7 +11,7 @@ import { Product } from '../../../services/product';
 export class AllProducts {
   products: any;
   private productsService = inject(Product);
-
+  
   ngOnInit() {
     this.getProducts();
   }
@@ -26,7 +27,7 @@ export class AllProducts {
     });
   }
 
-  deleteProduct(id: string) {}
+
   delete(id: string) {
     this.productsService.deleteProductById(id).subscribe({
       next: (res: any) => {
@@ -36,6 +37,42 @@ export class AllProducts {
       error: (err) => {
         console.log(err);
       },
-    });
+    }); 
   }
+
+
+  deleteProduct(id: string) {
+
+  Swal.fire({
+    title: "Estas seguro de eliminarlo?",
+    text: "No se revertiran los cambios",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Si, eliminar"
+  }).then((result) => {
+
+    if (result.isConfirmed) {
+
+      this.productsService.deleteProductById(id).subscribe({
+        next: (res: any) => {
+          Swal.fire({
+            title: "Eliminado!",
+            text: "Se ha eliminado",
+            icon: "success"
+          });
+
+          this.getProducts();
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
+
+    }
+  });
+
+}
+
 }

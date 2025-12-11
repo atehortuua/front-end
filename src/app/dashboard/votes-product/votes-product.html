@@ -1,1 +1,60 @@
-<p>votes-product works!</p>
+<div class="container">
+
+  <h2 class="title">Votos del Producto</h2>
+
+  <div class="info-box">
+    <p>Total de votos: <strong>{{ totalVotes }}</strong></p>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    Cargando votos...
+  </div>
+
+  <div *ngIf="!loading && votes.length === 0" class="no-votes">
+    Este producto aún no tiene votos.
+  </div>
+
+  <div *ngIf="!loading && votes.length > 0" class="votes-list">
+
+    <div class="vote-card" *ngFor="let v of votes">
+      <div class="vote-header">
+        <div class="avatar">{{ v.userName?.charAt(0) || 'U' }}</div>
+        <div class="details">
+          <p class="user">{{ v.userName || 'Usuario Anónimo' }}</p>
+          <small class="date">{{ v.createdAt | date:'short' }}</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="ranking-card">
+    <h2 class="ranking-title">🏆 Ranking de Productos Votados</h2>
+
+    <div *ngIf="loading" class="loading-message">
+        Cargando resultados...
+    </div>
+
+    <ul *ngIf="!loading && ranking.length > 0" class="ranking-list">
+        <li *ngFor="let item of ranking; let i = index" 
+            [class.winner]="i === 0" 
+            class="ranking-item">
+
+            <span class="rank-number">{{ i + 1 }}º</span>
+            
+            <div class="product-details">
+                <span class="product-name">{{ item.nombre }}</span>
+                
+                <span *ngIf="i === 0" class="winner-badge">¡GANADOR!</span>
+            </div>
+
+            <span class="vote-count">{{ item.votos }} Votos</span>
+        </li>
+    </ul>
+
+    <div *ngIf="!loading && ranking.length === 0" class="no-data-message">
+        Aún no hay votos registrados para generar el ranking.
+    </div>
+</div>

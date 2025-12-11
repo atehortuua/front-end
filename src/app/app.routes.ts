@@ -37,8 +37,10 @@ export const routes: Routes = [
             {path: 'updateUser/:id', component : UpdateUser},
             {path: 'allUsers', component : AllUsers}  ,
             
-            
-            {path: 'votesProducts', component :  VotesProduct}
+            { path: 'votesProducts', redirectTo: 'votesProducts/default', pathMatch: 'full' },
+            { path: 'votesProducts', component : VotesProduct }
+
+
 
                     ]
     },

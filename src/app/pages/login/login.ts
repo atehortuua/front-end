@@ -24,8 +24,11 @@ export class Login {
     this.auth.login(this.user).subscribe({
     
       next : (res : any)=>{
-        console.log(res)
-      this.auth.saveToken(res.token, res.role)
+        console.log(res);
+      
+      this.auth.saveToken(res.token, res.role);
+      localStorage.setItem('userId', res.user._id);
+      
       Swal.fire({
       title: "Drag me!",
       icon: "success",

@@ -24,13 +24,25 @@ export class UpdateProduct {
     price : null
   };
 
-  onSubmit(){
-    
-  }
+ 
 ngOnInit(){
   this.id = this.route.snapshot.paramMap.get('id')
     this.getProductById(this.id);
 }
+
+
+ onSubmit(){
+    this.productService.updateproduct(this.id, this.product).subscribe({
+      next: (res: any)=> {
+        console.log(res);
+      alert('producto Actualizado')
+      },
+      error:(err)=>{
+        console.log(err)
+      }
+    })
+  };
+
   getProductById(id : string){
     this.productService.getProductsById(id).subscribe({
       next: (res : any)=>{

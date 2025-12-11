@@ -9,7 +9,8 @@
         <p class="card-price">{{item.price}}</p>
 
         
-        <button class="card-btn">Votar</button>
+        <button class="card-btn" (click)="vote(item._id)">Votar</button>
+
       </div>
     </div>
   }

@@ -38,9 +38,13 @@ export class Product {
     return this.http.get(this.apiUrl + '/api/products/product/' +id);
   }
 
+  updateproduct(id: String, data: any){
+    return this.http.put(`${this.apiUrl}/api/products/updateProduct/${id}`, data, {headers: this.getHeaders() })
+}
+
+
   deleteProductById(id: string) {
-    return this.http.delete(this.apiUrl + '/api/products/deleteProduct/' + id, {
-      headers: this.getHeaders(),
+    return this.http.delete(this.apiUrl + '/api/products/deleteProduct/' + id, { headers: this.getHeaders(),
     });
   }
 }
