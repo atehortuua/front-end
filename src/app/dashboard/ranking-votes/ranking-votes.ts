@@ -29,12 +29,13 @@ export class RankingVotesComponent implements OnInit {
 
   loadRanking(): void {
     this.loading = true;
+    this.error = '';
     this.votesService.getRanking().subscribe({
       next: (response: any) => {
         this.ranking = response.ranking || [];
         this.loading = false;
       },
-      error: (err) => {
+      error: (err: any) => {
         console.error('Error al cargar el ranking:', err);
         this.error = 'No se pudo cargar el ranking de votos';
         this.loading = false;
