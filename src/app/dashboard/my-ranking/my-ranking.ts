@@ -52,9 +52,9 @@ export class MyRanking {
   }
 
   getMedalEmoji(index: number): string {
-    if (index === 0) return '🥇';
-    if (index === 1) return '🥈';
-    if (index === 2) return '🥉';
+    if (index === 0) return '';
+    if (index === 1) return '';
+    if (index === 2) return '';
     return `${index + 1}°`;
   }
 }
