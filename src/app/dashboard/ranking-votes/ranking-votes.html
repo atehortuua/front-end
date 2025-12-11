@@ -1,0 +1,51 @@
+<div class="ranking-container">
+  <div class="ranking-header">
+    <h1>🏆 Ranking de Productos por Votos</h1>
+    <p class="subtitle">Descubre cuáles son los productos más votados</p>
+  </div>
+
+  @if (loading) {
+    <div class="loading-container">
+      <div class="spinner"></div>
+      <p>Cargando ranking...</p>
+    </div>
+  }
+
+  @if (error && !loading) {
+    <div class="error-message">
+      <p>⚠️ {{ error }}</p>
+      <button (click)="loadRanking()" class="retry-btn">Reintentar</button>
+    </div>
+  }
+
+  @if (!loading && !error && ranking.length === 0) {
+    <div class="empty-state">
+      <p>📦 No hay productos con votos todavía</p>
+    </div>
+  }
+
+  @if (!loading && !error && ranking.length > 0) {
+    <div class="ranking-list">
+      @for (item of ranking; track item.productId; let i = $index) {
+        <div class="ranking-item {{ getMedalClass(i) }}">
+          <div class="position">
+            <span class="medal">{{ getMedalEmoji(i) }}</span>
+          </div>
+          
+          <div class="product-image">
+            <img [src]="item.image" [alt]="item.name" />
+          </div>
+          
+          <div class="product-info">
+            <h3>{{ item.name }}</h3>
+          </div>
+          
+          <div class="votes-count">
+            <span class="votes-number">{{ item.totalVotes }}</span>
+            <span class="votes-label">{{ item.totalVotes === 1 ? 'voto' : 'votos' }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>
