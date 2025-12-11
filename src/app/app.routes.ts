@@ -13,6 +13,7 @@ import { UpdateUser } from './dashboard/users/update-user/update-user';
 import { AllUsers } from './dashboard/users/all-users/all-users';
 import { UpdateProduct } from './dashboard/products/update-product/update-product';
 import { InfoProduct } from './dashboard/products/info-product/info-product';
+import { RankingVotesComponent } from './dashboard/ranking-votes/ranking-votes';
 
 
 
@@ -38,7 +39,10 @@ export const routes: Routes = [
             {path: 'allUsers', component : AllUsers}  ,
             
             { path: 'votesProducts', redirectTo: 'votesProducts/default', pathMatch: 'full' },
-            { path: 'votesProducts', component : VotesProduct }
+            { path: 'votesProducts', component : VotesProduct },
+            
+            // Nueva ruta para el ranking de votos
+            { path: 'ranking', component: RankingVotesComponent }
 
 
 
