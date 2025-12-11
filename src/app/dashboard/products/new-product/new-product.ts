@@ -25,7 +25,7 @@ export class NewProduct {
     this.productService.createProduct(this.product).subscribe({
       next: (res : any) =>{
         console.log(res)
-        this.router.navigate(['/dashboard'])
+        this.router.navigate(['/#'])
       },
       error:(err)=>{
         console.log(err)

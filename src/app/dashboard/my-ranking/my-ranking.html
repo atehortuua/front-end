@@ -1,0 +1,54 @@
+<div class="ranking-container">
+  <div class="ranking-header">
+    <h1>Ranking de Mi Productos</h1>
+    <p class="subtitle">Aqui puedes ver como Primavera te apoya. ¡Suerte!</p>
+  </div>
+
+  @if (loading) {
+    <div class="loading-container">
+      <div class="spinner"></div>
+      <p>Cargando ranking...</p>
+    </div>
+  }
+
+  @if (error && !loading) {
+    <div class="error-message">
+      <p> {{ error }}</p>
+      <button (click)="loadRanking()" class="retry-btn">Reintentar</button>
+    </div>
+  }
+
+  @if (!loading && !error && ranking.length === 0) {
+    <div class="empty-state">
+      <p> Aún no tienes productos con votos</p>
+      <p class="empty-subtitle">Crea productos y espera a que los usuarios voten</p>
+    </div>
+  }
+
+  @if (!loading && !error && ranking.length > 0) {
+    <div class="ranking-list">
+      @for (item of ranking; track item.productId; let i = $index) {
+        <div class="ranking-item {{ getMedalClass(i) }}">
+          <div class="position">
+            <span class="medal">{{ getMedalEmoji(i) }}</span>
+          </div>
+          
+          <div class="product-image">
+            <img [src]="item.image" [alt]="item.name" />
+          </div>
+          
+          <div class="product-info">
+            <h3>{{ item.name }}</h3>
+            <span class="owner-badge">Tu producto</span>
+          </div>
+          
+          <div class="votes-count">
+            <span class="votes-number">{{ item.totalVotes }}</span>
+            <span class="votes-label">{{ item.totalVotes === 1 ? 'voto' : 'votos' }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>
+

@@ -30,5 +30,9 @@ import { inject, Injectable } from '@angular/core';
   getRanking(){
     return this.http.get(`${this.API}/ranking`);
   }
+
+  getRankingByOwner(){
+    return this.http.get(`${this.API}/ranking/owner`);
+  }
   
 }

@@ -14,8 +14,7 @@ import { AllUsers } from './dashboard/users/all-users/all-users';
 import { UpdateProduct } from './dashboard/products/update-product/update-product';
 import { InfoProduct } from './dashboard/products/info-product/info-product';
 import { RankingVotesComponent } from './dashboard/ranking-votes/ranking-votes';
-
-
+import { MyRanking } from './dashboard/my-ranking/my-ranking';
 
 export const routes: Routes = [
     {path: '', component : Home},
@@ -32,28 +31,19 @@ export const routes: Routes = [
             {path: 'products', component: AllProducts},
             {path: 'MyProduct', component: InfoProduct},
 
-
-
             {path: 'myUser', component: MyUser},
             {path: 'updateUser/:id', component : UpdateUser},
-            {path: 'allUsers', component : AllUsers}  ,
+            {path: 'allUsers', component : AllUsers},
             
             { path: 'votesProducts', redirectTo: 'votesProducts/default', pathMatch: 'full' },
             { path: 'votesProducts', component : VotesProduct },
             
-            // Nueva ruta para el ranking de votos
-            { path: 'ranking', component: RankingVotesComponent }
-
-
-
-                    ]
+            // Rutas de rankings
+            { path: 'ranking', component: RankingVotesComponent },
+            { path: 'myRanking', component: MyRanking }
+        ]
     },
 
-    
-
-    
-
     {path: '**', redirectTo: ''} //redireccionar al inicio
-
-
 ];
+
