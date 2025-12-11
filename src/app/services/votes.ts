@@ -13,6 +13,7 @@ import { inject, Injectable } from '@angular/core';
 }
 
 
+
   addVote(userId: string, productId : string){
     return this.http.post(`${this.API}/add/${userId}`, { productId})
   }
@@ -25,7 +26,8 @@ import { inject, Injectable } from '@angular/core';
   getVotesCount(productId : string){
     return this.http.post(`${this.API}/${productId}/count`, {})
   }
-  getRanking() {
+  
+  getRanking(){
     return this.http.get(`${this.API}/ranking`);
   }
   

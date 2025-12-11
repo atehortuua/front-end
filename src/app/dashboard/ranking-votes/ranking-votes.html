@@ -1,7 +1,7 @@
 <div class="ranking-container">
   <div class="ranking-header">
     <h1>🏆 Ranking de Productos por Votos</h1>
-    <p class="subtitle">Descubre cuáles son los productos más votados</p>
+    <p class="subtitle">Estas viendo el seguimiento de votos por producto ¡Mucha suerte!</p>
   </div>
 
   @if (loading) {
@@ -20,7 +20,7 @@
 
   @if (!loading && !error && ranking.length === 0) {
     <div class="empty-state">
-      <p>📦 No hay productos con votos todavía</p>
+      <p> No hay productos con votos todavía</p>
     </div>
   }
 
