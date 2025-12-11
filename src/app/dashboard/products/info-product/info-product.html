@@ -1,2 +1,26 @@
-<h2> {{product.name}} </h2>
-<button [routerLink] = "['/dashboard/updateProduct', product._id]"> editar</button>
+<div class="products-container">
+  <h2>Mis Productos</h2>
+  
+  @if (products.length === 0) {
+    <p class="empty-message">No tienes productos creados todavía</p>
+  }
+  
+  @if (products.length > 0) {
+    <div class="products-list">
+      @for (product of products; track product._id) {
+        <div class="product-card">
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.description }}</p>
+          <p><strong>Precio:</strong> {{ product.price }}</p>
+          <p><strong>Restaurante:</strong> {{ product.nameRestaurant }}</p>
+          @if (product.image) {
+            <img [src]="product.image" [alt]="product.name" class="product-image" />
+          }
+          <button [routerLink]="['/dashboard/updateProduct', product._id]" class="edit-btn">
+            Editar
+          </button>
+        </div>
+      }
+    </div>
+  }
+</div>

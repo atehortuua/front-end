@@ -1,16 +1,17 @@
 import { Component, inject } from '@angular/core';
 import { Product } from '../../../services/product';
 import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-info-product',
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl: './info-product.html',
   styleUrl: './info-product.css',
 })
 export class InfoProduct {
   private productService = inject(Product);
-  product: any;
+  products: any[] = [];
 
   ngOnInit() {
     this.getProducts();
@@ -20,8 +21,7 @@ export class InfoProduct {
     this.productService.getProductsByUser().subscribe({
       next: (res: any) => {
         console.log(res);
-        
-        this.product = res.products[0];
+        this.products = res.products || [];
       },
       error: (err) => {
         console.log(err);
