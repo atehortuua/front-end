@@ -15,6 +15,23 @@ export class Login {
   
   private auth = inject (Auth)
   private router =inject(Router)
+
+pass = '123456789'
+
+  admin = {
+    email: 'matehortua32@gmail.com',
+    password: this.pass
+  }
+  owner = {
+    email: 'mistica@gmail.com',
+    password: this.pass
+  }
+  client = {
+    email: 'cliente3@gmail.com',
+    password: this.pass
+  }
+
+
   user={
     email :'',
     password : ''
@@ -48,5 +65,21 @@ export class Login {
         console.log(err);
       }
     })
+  }
+
+
+  loginAsAdmin() {
+    this.user = { ...this.admin };
+    this.login();
+  }
+
+  loginAsOwner() {
+    this.user = { ...this.owner };
+    this.login();
+  }
+
+  loginAsClient() {
+    this.user = { ...this.client };
+    this.login();
   }
 }

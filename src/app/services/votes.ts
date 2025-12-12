@@ -25,7 +25,9 @@ export class Votes {
   }
 
   addVote(userId: string, productId: string) {
-    return this.http.post(`${this.API}/add/${userId}`, { productId });
+    return this.http.post(`${this.API}/add/${userId}`, { productId }, {
+      headers: this.getHeaders(),
+    });
   }
 
   getVotes(productId: string) {
