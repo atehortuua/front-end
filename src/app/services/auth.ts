@@ -48,6 +48,8 @@ getRole(){
   return localStorage.getItem('role')
 }
 
-
+verifyUser (token : string){
+  return this.http.get(`${this.apiUrl}/api/users/verify/${token}`);
+}
 
 }

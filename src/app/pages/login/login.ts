@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
+  imports: [FormsModule,  ],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -19,7 +19,7 @@ export class Login {
 pass = '123456789'
 
   admin = {
-    email: 'matehortua32@gmail.com',
+    email: 'admin@gmail.com',
     password: this.pass
   }
   owner = {
@@ -62,7 +62,12 @@ pass = '123456789'
       
       },
       error : (err)=> {
+        if(err.status = 403){
+          Swal.fire("No te has Verificado.. Revisa tu correo!");
+        }
+        
         console.log(err);
+        
       }
     })
   }

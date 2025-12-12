@@ -15,6 +15,7 @@ import { UpdateProduct } from './dashboard/products/update-product/update-produc
 import { InfoProduct } from './dashboard/products/info-product/info-product';
 import { RankingVotesComponent } from './dashboard/ranking-votes/ranking-votes';
 import { MyRanking } from './dashboard/my-ranking/my-ranking';
+import { VerifiedUser } from './pages/verified-user/verified-user';
 
 export const routes: Routes = [
     {path: '', component : Home},
@@ -43,6 +44,8 @@ export const routes: Routes = [
             { path: 'myRanking', component: MyRanking }
         ]
     },
+
+    {path: 'verify/:token',  component: VerifiedUser },
 
     {path: '**', redirectTo: ''} //redireccionar al inicio
 ];
