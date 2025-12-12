@@ -1,91 +1,161 @@
-/* ======= Menú estilo Restaurante de Hamburguesas ======= */
+/* ======= Menú Elegante Dorado y Negro ======= */
 
 :root {
-  --bg-color: #2b1b12;         /* marrón oscuro, estilo parrilla */
-  --accent: #ff7a00;           /* naranja hamburguesa */
-  --text-light: #fff4e3;       /* crema */
-  --hover: #ff9a3d;
-  --radius: 14px;
-  --shadow: rgba(0, 0, 0, 0.25);
-  --font: "Poppins", sans-serif;
+  --bg-black: #0d0d0d;
+  --bg-dark: #1a1a1a;
+  --gold: #d4af37;
+  --gold-light: #ffd700;
+  --gold-dark: #b8941e;
+  --text-light: #f5f5f5;
+  --text-gold: #d4af37;
+  --shadow-gold: rgba(212, 175, 55, 0.3);
+  --radius: 12px;
+  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .menu {
-  background-color: var(--bg-color);
-  width: 250px;
+  background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
+  width: 260px;
   min-height: 100vh;
   color: var(--text-light);
   display: flex;
   flex-direction: column;
-  box-shadow: 5px 0 15px var(--shadow);
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.5);
+  border-right: 1px solid rgba(212, 175, 55, 0.1);
+  position: relative;
   top: 0;
   left: 0;
   padding-top: 1rem;
   transition: all 0.3s ease;
 }
 
+/* Efecto de brillo dorado en el borde */
+.menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, var(--gold) 50%, transparent 100%);
+  opacity: 0.3;
+}
+
 /* ======= HEADER DEL MENÚ ======= */
 .menu-header {
   text-align: center;
-  padding: 3rem 1rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem 1rem;
+  border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, transparent 100%);
 }
 
 .menu-header h2 {
   font-family: var(--font);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 1px;
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px var(--shadow-gold);
 }
 
 /* ======= LISTA DEL MENÚ ======= */
 .menu-list {
   list-style: none;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   margin: 0;
 }
 
 .menu-list li {
-  margin: 0.5rem 0;
+  margin: 0.3rem 0;
 }
 
 .menu-list a {
-  display: block;
-  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
   text-decoration: none;
   color: var(--text-light);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1rem;
   transition: all 0.3s ease;
-  border-left: 4px solid transparent;
+  border-left: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de brillo al pasar el cursor */
+.menu-list a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.15) 0%, transparent 100%);
+  transition: width 0.3s ease;
+  z-index: 0;
+}
+
+.menu-list a:hover::before {
+  width: 100%;
 }
 
 .menu-list a:hover {
-  background: rgba(255, 122, 0, 0.15);
-  color: var(--hover);
-  border-left: 4px solid var(--accent);
+  color: var(--gold-light);
+  border-left: 3px solid var(--gold);
   transform: translateX(5px);
+  background: rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
 }
 
 /* ======= LINK ACTIVO ======= */
 .menu-list a.active {
-  background: rgba(255, 122, 0, 0.25);
-  color: var(--accent);
-  border-left: 4px solid var(--accent);
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.05) 100%);
+  color: var(--gold-light);
+  border-left: 3px solid var(--gold);
   font-weight: 700;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
 }
 
-/* ======= EFECTO AL PASAR EL CURSOR ======= */
-.menu-list a::before {
-  content: "🍔";
-  margin-right: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.menu-list a.active::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 60%;
+  background: linear-gradient(180deg, transparent 0%, var(--gold) 50%, transparent 100%);
+  border-radius: 2px;
 }
 
-.menu-list a:hover::before {
-  opacity: 1;
+/* ======= ICONOS (emojis) ======= */
+.menu-list a span {
+  margin-right: 12px;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
+}
+
+.menu-list a:hover span,
+.menu-list a.active span {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+}
+
+/* ======= SEPARADOR DECORATIVO ======= */
+.menu-list::after {
+  content: '';
+  display: block;
+  margin: 2rem auto;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+  opacity: 0.3;
 }
 
 /* ======= RESPONSIVE ======= */
@@ -98,6 +168,12 @@
     justify-content: space-around;
     padding: 0.5rem 0;
     position: static;
+    border-right: none;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+  }
+
+  .menu::before {
+    display: none;
   }
 
   .menu-header {
@@ -107,16 +183,28 @@
   .menu-list {
     display: flex;
     gap: 0.5rem;
+    padding: 0;
   }
 
   .menu-list a {
-    padding: 0.6rem 1rem;
+    padding: 0.8rem 1.2rem;
     border-left: none;
     border-radius: var(--radius);
+    border-bottom: 3px solid transparent;
   }
 
+  .menu-list a:hover,
   .menu-list a.active {
-    background: var(--accent);
-    color: var(--text-light);
+    border-left: none;
+    border-bottom: 3px solid var(--gold);
+    transform: translateY(-3px);
+  }
+
+  .menu-list a.active::after {
+    display: none;
+  }
+
+  .menu-list::after {
+    display: none;
   }
 }
