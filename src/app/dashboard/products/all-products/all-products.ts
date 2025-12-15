@@ -44,13 +44,17 @@ export class AllProducts {
   deleteProduct(id: string) {
 
   Swal.fire({
-    title: "Estas seguro de eliminarlo?",
-    text: "No se revertiran los cambios",
+    title: "¿Estás seguro de eliminarlo?",
+    text: "No se revertirán los cambios",
     icon: "warning",
     showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Si, eliminar"
+    confirmButtonColor: "#d4af37",
+    cancelButtonColor: "#e74c3c",
+    confirmButtonText: "Sí, eliminar",
+    cancelButtonText: "Cancelar",
+    background: '#1a1a1a',
+    color: '#f5f5f5',
+    iconColor: '#ff9800'
   }).then((result) => {
 
     if (result.isConfirmed) {
@@ -58,15 +62,30 @@ export class AllProducts {
       this.productsService.deleteProductById(id).subscribe({
         next: (res: any) => {
           Swal.fire({
-            title: "Eliminado!",
-            text: "Se ha eliminado",
-            icon: "success"
+            title: "¡Eliminado!",
+            text: "El producto ha sido eliminado exitosamente",
+            icon: "success",
+            confirmButtonColor: '#d4af37',
+            background: '#1a1a1a',
+            color: '#f5f5f5',
+            iconColor: '#d4af37',
+            confirmButtonText: 'Aceptar'
           });
 
           this.getProducts();
         },
         error: (err) => {
           console.log(err);
+          Swal.fire({
+            title: "Error",
+            text: "No se pudo eliminar el producto",
+            icon: "error",
+            confirmButtonColor: '#d4af37',
+            background: '#1a1a1a',
+            color: '#f5f5f5',
+            iconColor: '#e74c3c',
+            confirmButtonText: 'Cerrar'
+          });
         }
       });
 

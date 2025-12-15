@@ -52,7 +52,10 @@ export class Login {
           text: 'Inicio de sesión exitoso',
           icon: 'success',
           timer: 1500,
-          showConfirmButton: false
+          showConfirmButton: false,
+          background: '#1a1a1a',
+          color: '#f5f5f5',
+          iconColor: '#d4af37'
         });
 
         if (res.role === 'cliente'){
@@ -69,28 +72,44 @@ export class Login {
             title: 'Cuenta no verificada',
             text: 'Por favor revisa tu correo para verificar tu cuenta',
             icon: 'warning',
-            confirmButtonColor: '#ff9800'
+            confirmButtonColor: '#d4af37',
+            background: '#1a1a1a',
+            color: '#f5f5f5',
+            iconColor: '#ff9800',
+            confirmButtonText: 'Entendido'
           });
         } else if (err.status === 401) {
           Swal.fire({
             title: 'Error de autenticación',
             text: 'Correo o contraseña incorrectos',
             icon: 'error',
-            confirmButtonColor: '#e74c3c'
+            confirmButtonColor: '#d4af37',
+            background: '#1a1a1a',
+            color: '#f5f5f5',
+            iconColor: '#e74c3c',
+            confirmButtonText: 'Intentar de nuevo'
           });
         } else if (err.status === 404) {
           Swal.fire({
             title: 'Usuario no encontrado',
             text: 'El correo ingresado no está registrado',
             icon: 'error',
-            confirmButtonColor: '#e74c3c'
+            confirmButtonColor: '#d4af37',
+            background: '#1a1a1a',
+            color: '#f5f5f5',
+            iconColor: '#e74c3c',
+            confirmButtonText: 'Entendido'
           });
         } else {
           Swal.fire({
             title: 'Error',
             text: 'Ocurrió un error al iniciar sesión. Inténtalo de nuevo',
             icon: 'error',
-            confirmButtonColor: '#e74c3c'
+            confirmButtonColor: '#d4af37',
+            background: '#1a1a1a',
+            color: '#f5f5f5',
+            iconColor: '#e74c3c',
+            confirmButtonText: 'Cerrar'
           });
         }
       }
