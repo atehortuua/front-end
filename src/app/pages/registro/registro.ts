@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { Auth } from '../../services/auth';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './registro.html',
   styleUrl: './registro.css',
 })
@@ -32,9 +33,6 @@ export class Registro {
       error : (err)=> {
         console.log(err)
       },
-
-
-
     });
   }
 }

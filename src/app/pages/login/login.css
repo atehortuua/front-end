@@ -23,7 +23,7 @@ form {
   gap: 18px;
 }
 
-.from { /* tu clase original, no la cambio */
+.from {
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -50,6 +50,25 @@ input:focus {
   box-shadow: 0 0 6px rgba(255,152,0,0.4);
 }
 
+/* Estilos de validación ngModel */
+input.invalid {
+  border: 2px solid #e74c3c !important;
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+input.ng-valid.ng-touched {
+  border: 2px solid #27ae60;
+  background-color: rgba(39, 174, 96, 0.1);
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+
 button {
   margin-top: 10px;
   padding: 12px;
@@ -65,4 +84,26 @@ button {
 
 button:hover {
   background: #e68900;
+}
+
+button:disabled {
+  background-color: #95a5a6 !important;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.buttons button {
+  margin: 5px;
+  padding: 10px 15px;
+  background: #3498db;
+  font-size: 14px;
+}
+
+.buttons button:hover {
+  background: #2980b9;
 }
