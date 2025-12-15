@@ -1,8 +1,19 @@
+
+:host {
+  display: flex;
+  justify-content: center;
+  background: #000000;
+  min-height: 100vh;
+  width: 100%;
+}
+
 .ranking-container {
   max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   padding: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #000000;
+  min-height: 100vh;
 }
 
 .ranking-header {
@@ -12,17 +23,20 @@
 
 .ranking-header h1 {
   font-size: 2.5rem;
-  color: #2c3e50;
+  color: #d4af37;
   margin-bottom: 0.5rem;
   font-weight: 700;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .subtitle {
-  color: #7f8c8d;
+  color: #999;
   font-size: 1.1rem;
 }
 
-/* Loading State aaa*/
+
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -32,8 +46,8 @@
 }
 
 .spinner {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
+  border: 4px solid #1a1a1a;
+  border-top: 4px solid #d4af37;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -46,33 +60,34 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Error State */
+
 .error-message {
-  background-color: #fee;
-  border: 2px solid #e74c3c;
+  background-color: #1a0000;
+  border: 2px solid #d4af37;
   border-radius: 8px;
   padding: 2rem;
   text-align: center;
-  color: #c0392b;
+  color: #ff6b6b;
 }
 
 .retry-btn {
   margin-top: 1rem;
   padding: 0.7rem 1.5rem;
-  background-color: #3498db;
-  color: white;
+  background-color: #d4af37;
+  color: #000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
+  font-weight: 700;
   transition: background-color 0.3s;
 }
 
 .retry-btn:hover {
-  background-color: #2980b9;
+  background-color: #ffd700;
 }
 
-/* Empty State */
+
 .empty-state {
   text-align: center;
   padding: 4rem 0;
@@ -80,16 +95,15 @@
 
 .empty-state p {
   font-size: 1.3rem;
-  color: #95a5a6;
+  color: #999;
   margin-bottom: 0.5rem;
 }
 
 .empty-subtitle {
   font-size: 1rem !important;
-  color: #bdc3c7 !important;
+  color: #666 !important;
 }
 
-/* Ranking List */
 .ranking-list {
   display: flex;
   flex-direction: column;
@@ -102,35 +116,39 @@
   align-items: center;
   gap: 1.5rem;
   padding: 1.5rem;
-  background: white;
+  background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   transition: transform 0.2s, box-shadow 0.2s;
-  border-left: 5px solid #bdc3c7;
+  border-left: 5px solid #d4af37;
+  border: 2px solid rgba(212, 175, 55, 0.3);
 }
 
 .ranking-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);
+  border-color: #ffd700;
 }
 
-/* Medal Classes */
 .ranking-item.gold {
-  border-left-color: #f39c12;
-  background: linear-gradient(135deg, #fff9e6 0%, #ffffff 100%);
+  border-left-color: #ffd700;
+  background: linear-gradient(145deg, #2a2410 0%, #1a1a0a 100%);
+  border: 2px solid #ffd700;
 }
 
 .ranking-item.silver {
-  border-left-color: #95a5a6;
-  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  border-left-color: #c0c0c0;
+  background: linear-gradient(145deg, #252525 0%, #151515 100%);
+  border: 2px solid #c0c0c0;
 }
 
 .ranking-item.bronze {
   border-left-color: #cd7f32;
-  background: linear-gradient(135deg, #fff4e6 0%, #ffffff 100%);
+  background: linear-gradient(145deg, #2a1f10 0%, #1a140a 100%);
+  border: 2px solid #cd7f32;
 }
 
-/* Position */
+
 .position {
   text-align: center;
 }
@@ -138,15 +156,16 @@
 .medal {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #2c3e50;
+  color: #d4af37;
 }
 
-/* Product Image */
+
 .product-image {
   width: 120px;
   height: 120px;
   overflow: hidden;
   border-radius: 8px;
+  border: 2px solid #d4af37;
 }
 
 .product-image img {
@@ -160,7 +179,6 @@
   transform: scale(1.1);
 }
 
-/* Product Info */
 .product-info {
   display: flex;
   flex-direction: column;
@@ -169,46 +187,46 @@
 
 .product-info h3 {
   font-size: 1.4rem;
-  color: #2c3e50;
+  color: #d4af37;
   margin: 0;
   font-weight: 600;
 }
 
 .owner-badge {
   display: inline-block;
-  background-color: #3498db;
-  color: white;
+  background-color: #d4af37;
+  color: #000;
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   width: fit-content;
 }
 
-/* Votes Count */
 .votes-count {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ecf0f1;
+  background-color: rgba(212, 175, 55, 0.1);
   padding: 1rem;
   border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .votes-number {
   font-size: 2rem;
   font-weight: bold;
-  color: #2c3e50;
+  color: #d4af37;
 }
 
 .votes-label {
   font-size: 0.9rem;
-  color: #7f8c8d;
+  color: #999;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .ranking-item {
     grid-template-columns: 60px 80px 1fr;

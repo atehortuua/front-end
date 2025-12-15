@@ -1,20 +1,20 @@
-/* ======= Menú estilo Restaurante de Hamburguesas ======= */
+/* ======= Menú Dashboard Profesional - Negro y Dorado ======= */
 
 :root {
-  --bg-color: #2b1b12;         /* marrón oscuro, estilo parrilla */
-  --accent: #ff7a00;           /* naranja hamburguesa */
-  --text-light: #fff4e3;       /* crema */
-  --hover: #ff9a3d;
-  --radius: 14px;
-  --shadow: rgba(0, 0, 0, 0.25);
+  --bg-color: #000000;
+  --accent: #d4af37;
+  --text-gold: #d4af37;
+  --hover: #ffd700;
+  --radius: 8px;
+  --shadow: rgba(212, 175, 55, 0.3);
   --font: "Poppins", sans-serif;
 }
 
 .menu {
-  background-color: var(--bg-color);
+  background: #000000;
   width: 250px;
   min-height: 100vh;
-  color: var(--text-light);
+  color: var(--text-gold);
   display: flex;
   flex-direction: column;
   box-shadow: 5px 0 15px var(--shadow);
@@ -22,21 +22,23 @@
   left: 0;
   padding-top: 1rem;
   transition: all 0.3s ease;
+  border-right: 2px solid #d4af37;
 }
 
 /* ======= HEADER DEL MENÚ ======= */
 .menu-header {
   text-align: center;
   padding: 3rem 1rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(212, 175, 55, 0.4);
 }
 
 .menu-header h2 {
   font-family: var(--font);
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 1px;
+  color: #d4af37;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 /* ======= LISTA DEL MENÚ ======= */
@@ -54,38 +56,28 @@
   display: block;
   padding: 0.9rem 1.5rem;
   text-decoration: none;
-  color: var(--text-light);
+  color: #d4af37;
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
   border-left: 4px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .menu-list a:hover {
-  background: rgba(255, 122, 0, 0.15);
-  color: var(--hover);
-  border-left: 4px solid var(--accent);
+  background: rgba(212, 175, 55, 0.2);
+  color: #ffd700;
+  border-left: 4px solid #ffd700;
   transform: translateX(5px);
 }
 
 /* ======= LINK ACTIVO ======= */
 .menu-list a.active {
-  background: rgba(255, 122, 0, 0.25);
-  color: var(--accent);
-  border-left: 4px solid var(--accent);
+  background: rgba(212, 175, 55, 0.3);
+  color: #ffd700;
+  border-left: 4px solid #ffd700;
   font-weight: 700;
-}
-
-/* ======= EFECTO AL PASAR EL CURSOR ======= */
-.menu-list a::before {
-  content: "🍔";
-  margin-right: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.menu-list a:hover::before {
-  opacity: 1;
 }
 
 /* ======= RESPONSIVE ======= */
@@ -98,6 +90,8 @@
     justify-content: space-around;
     padding: 0.5rem 0;
     position: static;
+    border-right: none;
+    border-bottom: 2px solid #d4af37;
   }
 
   .menu-header {
@@ -107,16 +101,25 @@
   .menu-list {
     display: flex;
     gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .menu-list a {
     padding: 0.6rem 1rem;
     border-left: none;
     border-radius: var(--radius);
+    font-size: 0.85rem;
   }
 
   .menu-list a.active {
-    background: var(--accent);
-    color: var(--text-light);
+    background: #d4af37;
+    color: #000;
+  }
+
+  .menu-list a:hover {
+    transform: translateX(0);
+    background: #d4af37;
+    color: #000;
   }
 }
