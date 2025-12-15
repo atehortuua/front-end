@@ -6,10 +6,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" routerLink="/Contact">Home</a>
+        <a class="nav-link active" aria-current="page" routerLink="/Contact">INICIO</a>
         @if(!logeado){
-        <a class="nav-link" routerLink="/login">LOGIN</a> 
-        <a class="nav-link" routerLink="/registro">REGISTER</a>
+        <a class="nav-link" routerLink="/login">INICIAR SESION </a> 
+        <a class="nav-link" routerLink="/registro">REGISTRARSE</a>
         }
        @if(logeado) {
         <a class="nav-link" (click)= "logout()" >cerrar sesion</a>
@@ -17,7 +17,7 @@
        }
 
        @if(admin){
-        <a class="nav-link" routerLink="/dashboard">DASHBOARD</a>
+        <a class="nav-link" routerLink="/dashboard">PANEL ADMINISTRADORES</a>
        }
 
         
