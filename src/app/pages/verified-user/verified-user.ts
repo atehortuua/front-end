@@ -31,7 +31,7 @@ export class VerifiedUser {
         this.verified= !this.verified
         
         setTimeout(()=>{
-        this.router.navigate(['/#'])
+        this.router.navigate(['/login'])
         }, 3000)
       },
       error : (err)=> {
