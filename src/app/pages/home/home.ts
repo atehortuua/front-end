@@ -98,7 +98,7 @@ export class Home {
             confirmButtonText: 'ENTENDIDO',
             background: 'linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%)',
             showClass: {
-              popup: 'animate__animated animate__shakeX',
+              popup: 'animate__animated animate__shakeX'  ,
             },
             hideClass: {
               popup: 'animate__animated animate__fadeOut animate__faster',
