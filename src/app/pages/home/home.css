@@ -1,4 +1,3 @@
-
 :host {
   display: flex;
   justify-content: center;
@@ -9,11 +8,11 @@
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 350px));
   justify-content: center;
-  gap: 2rem;
+  gap: 2.5rem;
   padding: 3rem 2rem;
-  max-width: 1400px;
+  max-width: 1600px;
   width: 100%;
   background: #000000;
   min-height: 100vh;
@@ -42,7 +41,7 @@
 /* Imagen del Producto */
 .card-img {
   width: 100%;
-  height: 250px;
+  height: 280px;
   object-fit: cover;
   transition: transform 0.4s ease;
   background: #0a0a0a;
@@ -52,9 +51,8 @@
   transform: scale(1.08);
 }
 
-/* Cuerpo de la Tarjeta */
 .card-body {
-  padding: 1.5rem;
+  padding: 1.8rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -62,52 +60,48 @@
 
 /* Nombre del Restaurante */
 .card-Restaurant {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #999;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.6rem 0;
   font-weight: 500;
 }
 
-
 .card-title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #d4af37;
-  margin: 0 0 0.8rem 0;
+  margin: 0 0 1rem 0;
   letter-spacing: 1px;
   text-transform: uppercase;
   min-height: 2rem;
   text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
-
 .card-description {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #b8b8b8;
-  margin: 0 0 1rem 0;
-  line-height: 1.5;
+  margin: 0 0 1.2rem 0;
+  line-height: 1.6;
   flex-grow: 1;
-  min-height: 2.5rem;
+  min-height: 3rem;
 }
-
 
 .card-price {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: #d4af37;
   font-weight: 700;
-  margin: 0 0 1.2rem 0;
+  margin: 0 0 1.5rem 0;
 }
-
 
 .card-btn {
   width: 100%;
-  padding: 0.9rem;
+  padding: 1rem;
   background: linear-gradient(145deg, #d4af37 0%, #b8941f 100%);
   border: none;
   color: #000;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 2px;
   border-radius: 8px;
@@ -127,28 +121,36 @@
   transform: translateY(0);
 }
 
-
+/* Responsive - Tablets */
 @media (max-width: 991px) {
   .cards-container {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 280px));
-    gap: 1.8rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+    gap: 2rem;
     padding: 2rem 1.5rem;
   }
 
   .card-img {
-    height: 220px;
+    height: 240px;
+  }
+
+  .card-body {
+    padding: 1.5rem;
   }
 
   .card-title {
     font-size: 1.3rem;
   }
 
+  .card-description {
+    font-size: 0.95rem;
+  }
+
   .card-price {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 
-
+/* Responsive - Móviles */
 @media (max-width: 576px) {
   .cards-container {
     grid-template-columns: 1fr;
@@ -192,8 +194,10 @@
     padding: 0.8rem;
     font-size: 0.95rem;
   }
+}
 
-  @keyframes bounce {
+/* Animaciones */
+@keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
 }
@@ -213,44 +217,13 @@
   }
 }
 
-.swal-custom-burger {
-  border: 3px solid #d4af37 !important;
-  border-radius: 20px !important;
-  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4) !important;
-}
-
-.swal-btn-gold {
-  background: linear-gradient(145deg, #d4af37 0%, #b8941f 100%) !important;
-  color: #000 !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 2px !important;
-  padding: 14px 35px !important;
-  border: none !important;
-  border-radius: 8px !important;
-  font-size: 1.1rem !important;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4) !important;
-  transition: all 0.3s ease !important;
-}
-
-.swal-btn-gold:hover {
-  background: linear-gradient(145deg, #ffd700 0%, #d4af37 100%) !important;
-  box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6) !important;
-  transform: translateY(-2px) !important;
-}
-@keyframes burgerBounce {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  25% { transform: translateY(-30px) rotate(-5deg); }
-  50% { transform: translateY(0) rotate(5deg); }
-  75% { transform: translateY(-15px) rotate(-3deg); }
-}
-
 @keyframes burgerShake {
   0%, 100% { transform: translateX(0) rotate(0deg); }
   10%, 30%, 50%, 70%, 90% { transform: translateX(-10px) rotate(-3deg); }
   20%, 40%, 60%, 80% { transform: translateX(10px) rotate(3deg); }
 }
 
+/* SweetAlert Styles */
 .swal-custom-burger {
   border: 3px solid #d4af37 !important;
   border-radius: 20px !important;
@@ -273,15 +246,12 @@
   border: none !important;
   border-radius: 8px !important;
   font-size: 1.1rem !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4) !important;
+  transition: all 0.3s ease !important;
 }
 
 .swal-btn-gold:hover {
   background: linear-gradient(145deg, #ffd700 0%, #d4af37 100%) !important;
+  box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6) !important;
   transform: translateY(-2px) !important;
 }
-
-
-
-}
-
-
