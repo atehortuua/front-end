@@ -6,7 +6,9 @@ import { inject, Injectable } from '@angular/core';
 })
 export class Product {
   private http = inject(HttpClient);
-  private apiUrl: string = 'http://localhost:3000';
+  // private apiUrl: string = 'http://localhost:3000';
+  private apiUrl: string = 'https://atehortua.duckdns.org';
+
 
   getToken() {
     return localStorage.getItem('token');

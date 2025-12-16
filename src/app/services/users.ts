@@ -5,7 +5,9 @@ import { inject, Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class Users {
-  private apiUrl : string = 'http://localhost:3000/api/users';
+  // private apiUrl : string = 'http://localhost:3000/api/users';
+  private apiUrl : string = 'https://atehortua.duckdns.org/api/users';
+
   private http = inject(HttpClient);
 
 
