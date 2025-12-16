@@ -238,6 +238,48 @@
   box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6) !important;
   transform: translateY(-2px) !important;
 }
+@keyframes burgerBounce {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-30px) rotate(-5deg); }
+  50% { transform: translateY(0) rotate(5deg); }
+  75% { transform: translateY(-15px) rotate(-3deg); }
+}
+
+@keyframes burgerShake {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px) rotate(-3deg); }
+  20%, 40%, 60%, 80% { transform: translateX(10px) rotate(3deg); }
+}
+
+.swal-custom-burger {
+  border: 3px solid #d4af37 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4) !important;
+}
+
+.swal-custom-error {
+  border: 3px solid #ff6b6b !important;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 30px rgba(255, 107, 107, 0.3) !important;
+}
+
+.swal-btn-gold {
+  background: linear-gradient(145deg, #d4af37 0%, #b8941f 100%) !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  padding: 14px 35px !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1.1rem !important;
+}
+
+.swal-btn-gold:hover {
+  background: linear-gradient(145deg, #ffd700 0%, #d4af37 100%) !important;
+  transform: translateY(-2px) !important;
+}
+
 
 
 }
