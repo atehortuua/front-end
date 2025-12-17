@@ -27,7 +27,7 @@
   font-size: 1.1rem;
 }
 
-/* Loading State */
+
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Error State */
+
 .error-message {
   background-color: #1a0000;
   border: 2px solid #d4af37;
@@ -78,7 +78,7 @@
   background-color: #ffd700;
 }
 
-/* Empty State */
+
 .empty-state {
   text-align: center;
   padding: 4rem 0;
@@ -86,7 +86,7 @@
   color: #999;
 }
 
-/* Ranking List */
+
 .ranking-list {
   display: flex;
   flex-direction: column;
@@ -113,7 +113,7 @@
   border-color: #ffd700;
 }
 
-/* Medal Classes */
+
 .ranking-item.gold {
   border-left-color: #ffd700;
   background: linear-gradient(145deg, #2a2410 0%, #1a1a0a 100%);
@@ -132,7 +132,7 @@
   border: 2px solid #cd7f32;
 }
 
-/* Position */
+
 .position {
   text-align: center;
 }
@@ -143,7 +143,7 @@
   color: #d4af37;
 }
 
-/* Product Image */
+
 .product-image {
   width: 120px;
   height: 120px;
@@ -163,7 +163,7 @@
   transform: scale(1.1);
 }
 
-/* Product Info */
+
 .product-info h3 {
   font-size: 1.4rem;
   color: #d4af37;
@@ -171,7 +171,7 @@
   font-weight: 600;
 }
 
-/* Votes Count */
+
 .votes-count {
   display: flex;
   flex-direction: column;
@@ -195,7 +195,7 @@
   letter-spacing: 1px;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .ranking-item {
     grid-template-columns: 60px 80px 1fr;

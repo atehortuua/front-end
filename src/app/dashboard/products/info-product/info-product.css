@@ -1,4 +1,4 @@
-/* Centra todo el componente */
+
 :host {
   display: flex;
   justify-content: center;
@@ -115,7 +115,6 @@ h2 {
   transform: scale(0.98);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .products-container {
     padding: 1.5rem;

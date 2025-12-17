@@ -1,4 +1,4 @@
-/* ======= Productos - Negro y Dorado Profesional ======= */
+
 
 section {
   background: #000000;
@@ -90,7 +90,7 @@ section {
   transform: scale(0.98);
 }
 
-/* ======= RESPONSIVE ======= */
+
 @media (max-width: 768px) {
   section {
     padding: 1.5rem;

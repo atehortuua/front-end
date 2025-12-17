@@ -1,4 +1,4 @@
-/* ======= Menú Dashboard Profesional - Negro y Dorado ======= */
+
 
 :root {
   --bg-color: #000000;
@@ -25,7 +25,7 @@
   border-right: 2px solid #d4af37;
 }
 
-/* ======= HEADER DEL MENÚ ======= */
+
 .menu-header {
   text-align: center;
   padding: 3rem 1rem;
@@ -41,7 +41,7 @@
   text-transform: uppercase;
 }
 
-/* ======= LISTA DEL MENÚ ======= */
+
 .menu-list {
   list-style: none;
   padding: 1rem 0;
@@ -72,7 +72,7 @@
   transform: translateX(5px);
 }
 
-/* ======= LINK ACTIVO ======= */
+
 .menu-list a.active {
   background: rgba(212, 175, 55, 0.3);
   color: #ffd700;
@@ -80,7 +80,7 @@
   font-weight: 700;
 }
 
-/* ======= RESPONSIVE ======= */
+
 @media (max-width: 800px) {
   .menu {
     width: 100%;

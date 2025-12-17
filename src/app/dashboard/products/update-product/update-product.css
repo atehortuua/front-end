@@ -1,4 +1,9 @@
-/* Centra todo el componente */
+.swal-title-gold {
+  color: #d4af37 !important;
+  font-weight: 700 !important;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.5) !important;
+}
+
 :host {
   display: flex;
   justify-content: center;

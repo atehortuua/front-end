@@ -1,4 +1,4 @@
-/* Centra todo el contenido del formulario */
+
 :host {
   display: flex;
   justify-content: center;
