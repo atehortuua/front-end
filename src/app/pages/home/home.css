@@ -1,10 +1,57 @@
+
 :host {
-  display: flex;
-  justify-content: center;
+  display: block;  
   background: #000000;
   min-height: 100vh;
   width: 100%;
 }
+
+
+.welcome-banner {
+  text-align: center;
+  padding: 3rem 2rem 2rem 2rem;
+  background: linear-gradient(180deg, #000000 0%, #0d0d0d 100%);
+  width: 100%;
+  margin-bottom: 2rem;
+  animation: fadeInDown 1s ease;
+}
+
+.welcome-title {
+  font-family: 'Bungee Spice', cursive;
+  font-size: 4rem;
+  color: #d4af37;
+  margin: 0 0 1rem 0;
+  text-shadow: 
+    0 0 20px rgba(212, 175, 55, 0.8),
+    0 0 40px rgba(255, 215, 0, 0.5),
+    3px 3px 6px rgba(0, 0, 0, 0.8);
+  letter-spacing: 3px;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.welcome-subtitle {
+  font-family: 'Bungee Spice', cursive;
+  font-size: 5rem;
+  color: #ffd700;
+  margin: 0 0 1.5rem 0;
+  text-shadow: 
+    0 0 30px rgba(255, 215, 0, 1),
+    0 0 60px rgba(212, 175, 55, 0.8),
+    4px 4px 8px rgba(0, 0, 0, 0.9);
+  letter-spacing: 5px;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.welcome-description {
+  font-size: 1.5rem;
+  color: #f5f5f5;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 2s ease;
+}
+
 
 .cards-container {
   display: grid;
@@ -15,7 +62,7 @@
   max-width: 1600px;
   width: 100%;
   background: #000000;
-  min-height: 100vh;
+  margin: 0 auto;  
 }
 
 .card {
@@ -38,7 +85,7 @@
     0 0 25px rgba(212, 175, 55, 0.3);
 }
 
-/* Imagen del Producto */
+
 .card-img {
   width: 100%;
   height: 280px;
@@ -58,7 +105,7 @@
   flex-grow: 1;
 }
 
-/* Nombre del Restaurante */
+
 .card-Restaurant {
   font-size: 0.9rem;
   color: #999;
@@ -121,8 +168,71 @@
   transform: translateY(0);
 }
 
-/* Responsive - Tablets */
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 
+      0 0 20px rgba(212, 175, 55, 0.8),
+      0 0 40px rgba(255, 215, 0, 0.5),
+      3px 3px 6px rgba(0, 0, 0, 0.8);
+  }
+  50% {
+    text-shadow: 
+      0 0 30px rgba(255, 215, 0, 1),
+      0 0 60px rgba(255, 215, 0, 0.8),
+      3px 3px 6px rgba(0, 0, 0, 0.8);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 @media (max-width: 991px) {
+  .welcome-title {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+
+  .welcome-subtitle {
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+  }
+
+  .welcome-description {
+    font-size: 1.2rem;
+  }
+
+  .welcome-banner {
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  }
+
   .cards-container {
     grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
     gap: 2rem;
@@ -150,8 +260,28 @@
   }
 }
 
-/* Responsive - Móviles */
+
 @media (max-width: 576px) {
+  .welcome-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .welcome-subtitle {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .welcome-description {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .welcome-banner {
+    padding: 2rem 1rem 1rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
   .cards-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -196,11 +326,6 @@
   }
 }
 
-/* Animaciones */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
 
 @keyframes burgerBounce {
   0%, 100% { 
@@ -223,7 +348,7 @@
   20%, 40%, 60%, 80% { transform: translateX(10px) rotate(3deg); }
 }
 
-/* SweetAlert Styles */
+
 .swal-custom-burger {
   border: 3px solid #d4af37 !important;
   border-radius: 20px !important;

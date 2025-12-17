@@ -1,4 +1,4 @@
-/* Fondo negro de toda la página */
+
 .login-page {
   background: #000000;
   min-height: 100vh;
@@ -70,7 +70,7 @@ input:focus {
   box-shadow: 0 0 6px rgba(212, 175, 55, 0.5);
 }
 
-/* Estilos de validación ngModel */
+
 input.invalid {
   border: 2px solid #e74c3c !important;
   background-color: rgba(231, 76, 60, 0.1);
@@ -139,7 +139,7 @@ button:disabled {
   border-color: #d4af37;
 }
 
-/* Responsive */
+
 @media (max-width: 576px) {
   .login-page {
     padding: 10px;

@@ -1,4 +1,4 @@
-/* Fondo negro de toda la página */
+
 .registro-page {
   background: #000000;
   min-height: 100vh;
@@ -123,7 +123,7 @@ button:disabled {
   opacity: 0.6;
 }
 
-/* Responsive */
+
 @media (max-width: 576px) {
   .registro-page {
     padding: 10px;
