@@ -23,7 +23,8 @@ export class Login {
   //   email: 'admin@gmail.com',
   //   password: this.pass
   // }
-  // owner = {
+  
+  // owner
   //   email: 'mistica@gmail.com',
   //   password: this.pass
   // }

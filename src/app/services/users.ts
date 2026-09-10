@@ -5,31 +5,22 @@ import { inject, Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class Users {
-  // private apiUrl : string = 'http://localhost:3000/api/users';
-  private apiUrl : string = 'https://atehortua.duckdns.org/api/users';
-
+  private apiUrl: string = 'http://localhost:3000'; // O tu dominio de producción
   private http = inject(HttpClient);
 
-
   getUsers() {
-    return this.http.get(`${this.apiUrl}/users`);
+    return this.http.get(`${this.apiUrl}/api/users/users`); // Agregué la barra antes de api
   }
 
   getUsersById(id: string) {
-    return this.http.get(`${this.apiUrl}/users/${id}`);
+    return this.http.get(`${this.apiUrl}/api/users/users/${id}`); //  Faltaba la barra antes del id
   }
 
   deleteUserById(id: string) {
-    return this.http.delete(`${this.apiUrl}/deleteusers/${id}`);
+    return this.http.delete(`${this.apiUrl}/api/users/deleteusers/${id}`); //  Agregué la barra antes de api
   }
+
   updateUserById(id: string, data: any) {
-    return this.http.put(`${this.apiUrl}/updateusers/${id}`, data);
+    return this.http.put(`${this.apiUrl}/api/users/updateusers/${id}`, data); // Agregué la barra antes de api
   }
-
-  
-
-
-
-
-
 }

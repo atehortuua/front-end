@@ -6,7 +6,7 @@ import { inject, Injectable } from '@angular/core';
 })
 export class Votes {
   // private API = 'http://localhost:3000/api/votes';
-  private API = 'https://atehortua.duckdns.org/api/votes';
+  private API = 'http://localhost:3000/api/votes';
 
   private http = inject(HttpClient);
 
